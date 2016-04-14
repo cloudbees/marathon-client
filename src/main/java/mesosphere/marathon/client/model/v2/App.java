@@ -46,6 +46,7 @@ public class App {
 	private List<HealthCheck> healthChecks;
 
 	private List<Deployment> deployments;
+	private TaskFailure lastTaskFailure;
 
 	public String getId() {
 		return id;
@@ -229,6 +230,14 @@ public class App {
 			this.labels = new HashMap<String, String>();
 		}
 		this.labels.put(key, value);
+	}
+
+	public TaskFailure getLastTaskFailure() {
+		return lastTaskFailure;
+	}
+
+	public void setLastTaskFailure(TaskFailure lastTaskFailure) {
+		this.lastTaskFailure = lastTaskFailure;
 	}
 
 	@Override
